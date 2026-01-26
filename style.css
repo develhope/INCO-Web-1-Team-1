@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+}
+
+header, footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  margin-right: 20px;
+  width: 150px;       /* larghezza della foto */
+  height: 150px;      /* altezza della foto */
+  object-fit: cover;  /* mantiene le proporzioni e ritaglia se necessario */
+}
+
+
+
+
+/* Stile dei test nel profilo */
+.test {
+  border: 1px solid #ccc;       /* borde gris claro */
+  border-radius: 10px;          /* bordes redondeados */
+  padding: 15px;                /* espacio dentro del recuadro */
+  margin-bottom: 15px;          /* espacio entre cada test */
+  background-color: #f9f9f9;    /* fondo muy claro */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* sombra suave */
+}
+
+.test h4 {
+  margin-top: 0;                /* quitar espacio arriba del título */
+  color: #333;                  /* color del título */
+}
+
+.test p {
+  margin: 5px 0;                /* separar las líneas de texto */
+  color: #555;                  /* color del texto */
+}
+
+.test strong {
+  color: #000;                  /* resaltar la palabra "Risultato:" */
+}
+/* Colores diferentes por test */
+.test:nth-child(1) {
+  background-color: #e0f7fa;  /* azul claro */
+}
+
+.test:nth-child(2) {
+  background-color: #e8f5e9;  /* verde claro */
+}
+
+.test:nth-child(3) {
+  background-color: #fff3e0;  /* naranja claro */
+}
+
+.test:nth-child(4) {
+  background-color: #f3e5f5;  /* lila claro */
+}
+
+.test:nth-child(5) {
+  background-color: #fff9c4;  /* amarillo claro */
+}
+/* Stile del modulo di registrazione */
+.registration {
+  background: white;                   /* sfondo bianco */
+  padding: 20px;                       /* spazio interno */
+  border-radius: 10px;                 /* angoli arrotondati */
+  max-width: 400px;                     /* larghezza massima */
+  margin: 20px auto;                   /* centrato nella pagina */
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1); /* ombra leggera */
+}
+
+.registration h2 {
+  text-align: center;                  /* titolo centrato */
+  color: #333;                         /* colore del titolo */
+  margin-bottom: 20px;                 /* spazio sotto il titolo */
+}
+
+.registration form label {
+  display: block;                       /* etichette in blocco */
+  margin-bottom: 5px;                   /* spazio sotto etichetta */
+  font-weight: bold;                     /* grassetto */
+  color: #555;                           /* colore etichetta */
+}
+
+.registration form input {
+  width: 100%;                           /* riempie tutta la larghezza */
+  padding: 8px;                           /* spazio interno */
+  margin-bottom: 15px;                    /* spazio sotto l’input */
+  border-radius: 5px;                      /* angoli arrotondati */
+  border: 1px solid #ccc;                 /* bordo grigio chiaro */
+  box-sizing: border-box;
+}
+
+.registration form button {
+  width: 100%;                            /* riempie tutta la larghezza */
+  padding: 10px;                           /* spazio interno */
+  border-radius: 5px;                       /* angoli arrotondati */
+  border: none;                             /* senza bordo */
+  background-color: #2c3e50;               /* colore bottone */
+  color: white;                             /* testo bianco */
+  font-size: 16px;                          /* dimensione testo */
+  cursor: pointer;                          /* cambia cursore al passaggio */
+}
+
+.registration form button:hover {
+  background-color: #34495e;                /* colore bottone al passaggio */
+}
+
+/* Opzioni avatar nel modulo */
+.avatar-options {
+  display: flex;               /* allinea gli avatar in orizzontale */
+  justify-content: space-between; /* spazio uguale tra loro */
+  margin-bottom: 10px;         /* spazio sotto gli avatar */
+}
+
+.avatar-options img {
+  width: 95px;                /* dimensione piccola avatar */
+  height: 95px;
+  border-radius: 50%;         /* circolare */
+  cursor: pointer;            /* cursore puntatore */
+  border: 2px solid transparent; /* bordo invisibile iniziale */
+  transition: transform 0.2s, border 0.2s; /* animazione morbida */
+}
+
+.avatar-options img:hover {
+  transform: scale(1.05);      /* ingrandimento al passaggio */
+  border: 2px solid #2c3e50;   /* bordo al passaggio */
+}
+
+.avatar-options img.selected {
+  border: 2px solid #2c3e50;   /* bordo quando selezionato */
+}
