@@ -1,0 +1,169 @@
+/* ===== CHI SIAMO STARTS ===== */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #f5f5f5;
+  --color-white: #ffffff;
+  --color-text-main: #333;
+  --color-text-secondary: #555;
+  --color-text-muted: #777;
+  --color-border: #ddd;
+  --color-accent: #6b7b4b;     
+  --color-accent-hover: #5a683f;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-white);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 60px 20px;
+}
+
+section h1,
+section h2 {
+  text-align: center;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+section p {
+  max-width: 800px;
+  margin: 0 auto 15px;
+  text-align: center;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== TEAM ===== */
+.team-cards {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  display: flex;
+  gap: 30px;
+}
+
+.psychologist-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.psychologist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.psychologist-card img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.psychologist-card h3 {
+  margin: 10px 0 5px;
+}
+
+.specialization {
+  font-size: 14px;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  background-color: var(--color-bg);
+}
+
+.testimonial-slider {
+  max-width: 700px;
+  margin: 40px auto 0;
+  position: relative;
+}
+
+.testimonial {
+  display: none;
+  text-align: center;
+}
+
+.testimonial.active {
+  display: block;
+}
+
+.testimonial p {
+  font-style: italic;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+/* ===== BOOKING FORM ===== */
+.booking form {
+  max-width: 500px;
+  margin: 30px auto 0;
+}
+
+.booking input,
+.booking textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.booking button {
+  width: 100%;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.booking button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* ===== RESPONSIVE ======== */
+
+/* 📱 Tablet */
+@media (max-width: 768px) {
+  .team-cards {
+    flex-direction: column;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 480px) {
+  section h1,
+  section h2 {
+    font-size: 22px;
+  }
+
+  .psychologist-card img {
+    max-width: 140px;
+  }
+}
+/* ===== CHI SIAMO ENDS ===== */
