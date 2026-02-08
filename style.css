@@ -41,6 +41,10 @@ section p {
   line-height: 1.6;
 }
 
+/* ===== INTRO ===== */
+.about{
+  background-color: var(--color-bg);
+}
 /* ===== TEAM ===== */
 .team-cards {
   max-width: 1100px;
