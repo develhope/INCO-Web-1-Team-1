@@ -1,0 +1,136 @@
+/* ===== TEST DEL BENESSERE EMOTIVO ===== */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #f5f5f5;
+  --color-white: #ffffff;
+  --color-text-main: #333;
+  --color-text-secondary: #555;
+  --color-text-muted: #777;
+  --color-border: #ddd;
+  --color-accent: #6b7b4b;
+  --color-accent-hover: #5a683f;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-white);
+}
+
+/* ===== SECTION ===== */
+section.emotional-test {
+  background-color: var(--color-bg);
+  padding: 60px 20px;
+}
+
+section h1.test-title,
+section h2 {
+  text-align: center;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+section p {
+  max-width: 800px;
+  margin: 0 auto 15px;
+  text-align: center;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== FORM ===== */
+.test-form {
+  max-width: 700px;
+  margin: 30px auto 0;
+  padding: 20px;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.test-question {
+  margin-bottom: 25px;
+}
+
+.test-question p.question-text {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--color-text-main);
+}
+
+.test-question label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.test-question input[type="radio"] {
+  margin-right: 8px;
+  accent-color: var(--color-accent);
+}
+
+.test-question label:hover {
+  color: var(--color-accent);
+}
+
+/* ===== RESULT MESSAGE ===== */
+.result-message {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-accent);
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.btn-submit {
+  display: block;
+  width: 220px;
+  max-width: 90%;
+  margin: 25px auto 0;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  section.emotional-test {
+    padding: 40px 15px;
+  }
+  .test-form {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  section h1.test-title,
+  section h2 {
+    font-size: 22px;
+  }
+  .test-form {
+    padding: 12px;
+  }
+  .btn-submit {
+    width: 100%;
+  }
+}
