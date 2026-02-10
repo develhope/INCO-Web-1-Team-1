@@ -1,155 +1,233 @@
+/* ===== VARIABLES DEL PROYECTO ===== */
+:root {
+  --color-bg: #f5f5f5;
+  --color-white: #ffffff;
+  --color-text-main: #333;
+  --color-text-secondary: #555;
+  --color-text-muted: #777;
+  --color-border: #ddd;
+  --color-accent: #6b7b4b;
+  --color-accent-hover: #5a683f;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
+  font-family: 'Inter', sans-serif;
   margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
 }
 
-header, footer {
-  background-color: #2c3e50;
-  color: white;
-  padding: 15px;
+header {
+  background-color: var(--color-white);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-nav a {
-  color: white;
-  margin-right: 10px;
+header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--color-accent);
+}
+
+header nav a {
+  color: var(--color-text-main);
+  margin: 0 12px;
   text-decoration: none;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: var(--color-accent-hover);
 }
 
 main {
-  padding: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.registration {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.registration h2 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--color-accent);
+}
+
+.registration label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.registration input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+}
+
+.registration input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 6px rgba(107,123,75,0.2); /* var(--color-accent) semitransparente */
+}
+
+.registration button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.registration button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.avatar-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.avatar-select {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar-select:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(107,123,75,0.25); /* sombra con color de acento */
+}
+
+.profiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profiles-container .card {
+  flex: 1 1 calc(33% - 20px);
+  min-width: 250px;
 }
 
 .profile {
   display: flex;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .profile img {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-right: 20px;
-  width: 150px;       /* larghezza della foto */
-  height: 150px;      /* altezza della foto */
-  object-fit: cover;  /* mantiene le proporzioni e ritaglia se necessario */
+  border: 2px solid var(--color-border);
 }
 
+.profile-info {
+  width: 100%;
+  text-align: center;
+}
 
+.profile-info h3 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-accent);
+}
 
+.profile-info p {
+  margin: 5px 0;
+  color: var(--color-text-secondary);
+}
 
-/* Stile dei test nel profilo */
+.toggle-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.profile-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 15px;
+}
+
+.profile-details.show {
+  max-height: 500px;
+}
+
 .test {
-  border: 1px solid #ccc;       /* borde gris claro */
-  border-radius: 10px;          /* bordes redondeados */
-  padding: 15px;                /* espacio dentro del recuadro */
-  margin-bottom: 15px;          /* espacio entre cada test */
-  background-color: #f9f9f9;    /* fondo muy claro */
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* sombra suave */
+  background-color: var(--color-white);
+  border-left: 4px solid var(--color-accent);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .test h4 {
-  margin-top: 0;                /* quitar espacio arriba del título */
-  color: #333;                  /* color del título */
-}
-
-.test p {
-  margin: 5px 0;                /* separar las líneas de texto */
-  color: #555;                  /* color del texto */
+  color: var(--color-accent);
+  font-weight: 600;
+  margin: 0 0 5px 0;
 }
 
 .test strong {
-  color: #000;                  /* resaltar la palabra "Risultato:" */
-}
-/* Colores diferentes por test */
-.test:nth-child(1) {
-  background-color: #e0f7fa;  /* azul claro */
+  color: var(--color-accent-hover);
 }
 
-.test:nth-child(2) {
-  background-color: #e8f5e9;  /* verde claro */
-}
-
-.test:nth-child(3) {
-  background-color: #fff3e0;  /* naranja claro */
-}
-
-.test:nth-child(4) {
-  background-color: #f3e5f5;  /* lila claro */
-}
-
-.test:nth-child(5) {
-  background-color: #fff9c4;  /* amarillo claro */
-}
-/* Stile del modulo di registrazione */
-.registration {
-  background: white;                   /* sfondo bianco */
-  padding: 20px;                       /* spazio interno */
-  border-radius: 10px;                 /* angoli arrotondati */
-  max-width: 400px;                     /* larghezza massima */
-  margin: 20px auto;                   /* centrato nella pagina */
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1); /* ombra leggera */
-}
-
-.registration h2 {
-  text-align: center;                  /* titolo centrato */
-  color: #333;                         /* colore del titolo */
-  margin-bottom: 20px;                 /* spazio sotto il titolo */
-}
-
-.registration form label {
-  display: block;                       /* etichette in blocco */
-  margin-bottom: 5px;                   /* spazio sotto etichetta */
-  font-weight: bold;                     /* grassetto */
-  color: #555;                           /* colore etichetta */
-}
-
-.registration form input {
-  width: 100%;                           /* riempie tutta la larghezza */
-  padding: 8px;                           /* spazio interno */
-  margin-bottom: 15px;                    /* spazio sotto l’input */
-  border-radius: 5px;                      /* angoli arrotondati */
-  border: 1px solid #ccc;                 /* bordo grigio chiaro */
-  box-sizing: border-box;
-}
-
-.registration form button {
-  width: 100%;                            /* riempie tutta la larghezza */
-  padding: 10px;                           /* spazio interno */
-  border-radius: 5px;                       /* angoli arrotondati */
-  border: none;                             /* senza bordo */
-  background-color: #2c3e50;               /* colore bottone */
-  color: white;                             /* testo bianco */
-  font-size: 16px;                          /* dimensione testo */
-  cursor: pointer;                          /* cambia cursore al passaggio */
-}
-
-.registration form button:hover {
-  background-color: #34495e;                /* colore bottone al passaggio */
-}
-
-/* Opzioni avatar nel modulo */
-.avatar-options {
-  display: flex;               /* allinea gli avatar in orizzontale */
-  justify-content: space-between; /* spazio uguale tra loro */
-  margin-bottom: 10px;         /* spazio sotto gli avatar */
-}
-
-.avatar-options img {
-  width: 95px;                /* dimensione piccola avatar */
-  height: 95px;
-  border-radius: 50%;         /* circolare */
-  cursor: pointer;            /* cursore puntatore */
-  border: 2px solid transparent; /* bordo invisibile iniziale */
-  transition: transform 0.2s, border 0.2s; /* animazione morbida */
-}
-
-.avatar-options img:hover {
-  transform: scale(1.05);      /* ingrandimento al passaggio */
-  border: 2px solid #2c3e50;   /* bordo al passaggio */
-}
-
-.avatar-options img.selected {
-  border: 2px solid #2c3e50;   /* bordo quando selezionato */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color-white);
+  color: var(--color-text-main);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+  margin-top: 40px;
 }
