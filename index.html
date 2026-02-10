@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Personality Test</title>
+     <link rel="stylesheet" href="styles.css M"/>
+</head>
+
+<body>
+
+     <main class="test-container">
+          <section id="intro">
+               <h1>Discover Your Personality</h1>
+               <p class="subtitle">
+                    Choose how accurately each statement reflects you.
+               </p>
+               <button id="startBtn">Start Personality Test</button>
+          </section>
+
+          <section id="test" class="hidden">
+               <div id="progress">
+                    <span id="progressText"></span>
+                    <div class="progress-bar">
+                         <div class="progress-fill" id="progressFill"></div>
+                    </div>
+               </div>
+
+               <div id="questionBox">
+                    <h2 id="questionText"></h2>
+
+                    <div class="options">
+                         <button data-value="1">Strongly Disagree</button>
+                         <button data-value="2">Disagree</button>
+                         <button data-value="3">Neutral</button>
+                         <button data-value="4">Agree</button>
+                         <button data-value="5">Strongly Agree</button>
+                    </div>
+               </div>
+          </section>
+
+          <section id="result" class="hidden">
+               <h2>Your Personality Summary</h2>
+               <p id="resultText"></p>
+
+               <div class="disclaimer">
+                    <strong>Disclaimer:</strong>
+                    This personality test is provided for educational and informational
+                    purposes only. It does not constitute psychological or professional
+                    assessment and should not be used for clinical or diagnostic decisions.
+               </div>
+
+               <button onclick="location.reload()">Retake Test</button>
+          </section>
+     </main>
+
+     <script src="script.js M"></script>
+</body>
+
+</html>
