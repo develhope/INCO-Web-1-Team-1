@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>MindTest - Registro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="registration-page">
+  <section class="registration card">
+    <h2>Crea il tuo profilo</h2>
+
+    <label>Nome:</label>
+    <input type="text" placeholder="Inserisci il tuo nome" required>
+
+    <label>Email:</label>
+    <input type="email" placeholder="Inserisci la tua email" required>
+
+    <label>Password:</label>
+    <input type="password" placeholder="Inserisci la tua password" required>
+
+    <label>Età:</label>
+    <input type="number" placeholder="Inserisci la tua età">
+
+    <label>Città:</label>
+    <input type="text" placeholder="Inserisci la tua città">
+
+    <label>Avatar:</label>
+    <div class="avatar-options">
+      <img src="https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?w=600" alt="Avatar 1" class="avatar-select">
+      <img src="https://plus.unsplash.com/premium_vector-1682269284255-8209b981c625?w=600" alt="Avatar 2" class="avatar-select">
+      <img src="https://plus.unsplash.com/premium_vector-1682269282372-6d888f3451f1?w=600" alt="Avatar 3" class="avatar-select">
+    </div>
+
+    <button type="button" onclick="window.location.href='dashboard.html'">Crea profilo</button>
+  </section>
+</main>
+     <footer>
+  <div class="footer-container">
+
+    <!-- Navigazione -->
+    <div class="footer-section">
+      <h3>Navigazione</h3>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="test.html">Elenco dei test</a></li>
+      </ul>
+    </div>
+
+    <!-- Descrizione del progetto -->
+    <div class="footer-section">
+      <h3>MindTest</h3>
+      <p>
+        MindTest | Psicologia è una piattaforma di test psicologici online
+        pensata per aiutarti a conoscere meglio te stesso,
+        le tue emozioni e il tuo benessere mentale.
+      </p>
+    </div>
+
+    <!-- Modulo di contatto -->
+    <div class="footer-section">
+      <h3>Contattaci</h3>
+      <form action="#" method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="3" required></textarea>
+
+        <button type="submit">Invia</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2026 MindTest | Psicologia. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+</body>
+</html>
