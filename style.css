@@ -1,13 +1,14 @@
-/* ===== VARIABLES DEL PROYECTO ===== */
 :root {
   --color-bg: #f5f5f5;
-  --color-white: #ffffff;
+  --color-white: #fcfcf8;
   --color-text-main: #333;
   --color-text-secondary: #555;
   --color-text-muted: #777;
   --color-border: #ddd;
   --color-accent: #6b7b4b;
   --color-accent-hover: #5a683f;
+  --color-btn-shadow: rgba(107,123,75,0.25);
+  --color-card-shadow: rgba(0,0,0,0.08);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -21,32 +22,6 @@ body {
   line-height: 1.6;
 }
 
-header {
-  background-color: var(--color-white);
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-header h1 {
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: var(--color-accent);
-}
-
-header nav a {
-  color: var(--color-text-main);
-  margin: 0 12px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-header nav a:hover {
-  color: var(--color-accent-hover);
-}
-
 main {
   padding: 40px;
   display: flex;
@@ -54,98 +29,31 @@ main {
   gap: 40px;
 }
 
+/* Card de perfil */
 .card {
   background-color: var(--color-white);
   padding: 25px;
   border-radius: 12px;
   border: 1px solid var(--color-border);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 20px var(--color-card-shadow);
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-.registration {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.registration h2 {
-  font-weight: 600;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  color: var(--color-accent);
-}
-
-.registration label {
-  display: block;
-  margin-top: 15px;
-  font-weight: 500;
-}
-
-.registration input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-white);
-}
-
-.registration input:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 6px rgba(107,123,75,0.2); /* var(--color-accent) semitransparente */
-}
-
-.registration button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border-radius: 8px;
-  border: none;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.registration button:hover {
-  background-color: var(--color-accent-hover);
-}
-
-.avatar-options {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.avatar-select {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 2px solid var(--color-border);
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.avatar-select:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 16px rgba(107,123,75,0.25); /* sombra con color de acento */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--color-btn-shadow);
 }
 
 .profiles-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
 
 .profiles-container .card {
-  flex: 1 1 calc(33% - 20px);
-  min-width: 250px;
+  flex: 1 1 100%;
+  max-width: 500px;
 }
 
 .profile {
@@ -160,6 +68,11 @@ main {
   height: 100px;
   border-radius: 50%;
   border: 2px solid var(--color-border);
+  transition: transform 0.3s;
+}
+
+.profile img:hover {
+  transform: scale(1.05);
 }
 
 .profile-info {
@@ -187,22 +100,26 @@ main {
   color: var(--color-white);
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .toggle-btn:hover {
   background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
 }
 
+/* Detalles del perfil */
 .profile-details {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
   margin-top: 15px;
 }
 
 .profile-details.show {
-  max-height: 500px;
+  max-height: 600px;
+  opacity: 1;
 }
 
 .test {
@@ -211,6 +128,7 @@ main {
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .test h4 {
@@ -223,6 +141,29 @@ main {
   color: var(--color-accent-hover);
 }
 
+/* Avatar */
+.avatar-options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0 20px 0;
+}
+
+.avatar-select {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar-select:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px var(--color-btn-shadow);
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -230,4 +171,94 @@ footer {
   color: var(--color-text-main);
   box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
   margin-top: 40px;
+}
+
+/* Card de registro centrada */
+.registration-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 20px;
+}
+
+.registration.card {
+  max-width: 450px;
+  width: 100%;
+  padding: 30px 25px;
+  border-radius: 16px;
+  background-color: var(--color-white);
+  box-shadow: 0 12px 32px var(--color-btn-shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.registration.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px var(--color-btn-shadow);
+}
+
+.registration h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--color-accent);
+  font-size: 1.8rem;
+}
+
+.registration input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background-color: #fff;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.registration input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 8px rgba(107,123,75,0.2);
+}
+
+.registration button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.registration button:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .toggle-btn, .registration button {
+    width: 100%;
+  }
+
+  .registration.card {
+    padding: 25px 20px;
+  }
+
+  .registration h2 {
+    font-size: 1.5rem;
+  }
 }

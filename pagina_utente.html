@@ -7,68 +7,39 @@
 </head>
 <body>
 
-<header>
-  <h1>MindTest</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Test</a>
-    <a href="#">Profili</a>
-    <a href="#">Chi siamo</a>
-    <a href="#">Contatti</a>
-  </nav>
-</header>
-
-<main>
-
-  <!-- Formulario de registro -->
+<main class="registration-page">
   <section class="registration card">
     <h2>Crea il tuo profilo</h2>
-    <form onsubmit="goToDashboard(event)">
-      <label>Nome:</label>
-      <input type="text" placeholder="Inserisci il tuo nome" required>
 
-      <label>Email:</label>
-      <input type="email" placeholder="Inserisci la tua email" required>
+    <label>Nome:</label>
+    <input type="text" placeholder="Inserisci il tuo nome" required>
 
-      <label>Password:</label>
-      <input type="password" placeholder="Inserisci la tua password" required>
+    <label>Email:</label>
+    <input type="email" placeholder="Inserisci la tua email" required>
 
-      <label>Età:</label>
-      <input type="number" placeholder="Inserisci la tua età">
+    <label>Password:</label>
+    <input type="password" placeholder="Inserisci la tua password" required>
 
-      <label>Città:</label>
-      <input type="text" placeholder="Inserisci la tua città">
+    <label>Età:</label>
+    <input type="number" placeholder="Inserisci la tua età">
 
-      <label>Avatar:</label><br>
-      <div class="avatar-options">
-        <img src="https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?w=600" alt="Avatar 1" class="avatar-select">
-        <img src="https://plus.unsplash.com/premium_vector-1682269284255-8209b981c625?w=600" alt="Avatar 2" class="avatar-select">
-        <img src="https://plus.unsplash.com/premium_vector-1682269282372-6d888f3451f1?w=600" alt="Avatar 3" class="avatar-select">
-      </div>
-      <br>
+    <label>Città:</label>
+    <input type="text" placeholder="Inserisci la tua città">
 
-      <button type="submit">Crea profilo</button>
-    </form>
+    <label>Avatar:</label>
+    <div class="avatar-options">
+      <img src="https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?w=600" alt="Avatar 1" class="avatar-select">
+      <img src="https://plus.unsplash.com/premium_vector-1682269284255-8209b981c625?w=600" alt="Avatar 2" class="avatar-select">
+      <img src="https://plus.unsplash.com/premium_vector-1682269282372-6d888f3451f1?w=600" alt="Avatar 3" class="avatar-select">
+    </div>
 
-    <!-- Enlace visible para probar perfiles sin registro -->
-    <p style="margin-top:15px; text-align:center;">
-      <a href="dashboard.html" style="color:#1f3a6e; font-weight:600; text-decoration:underline;">Visualizza profili di esempio</a>
-    </p>
-
+    <button type="button" onclick="window.location.href='dashboard.html'">Crea profilo</button>
   </section>
-
 </main>
 
 <footer>
   <p>© 2026 MindTest – Tutti i diritti riservati</p>
 </footer>
 
-<script>
-  // Función para redirigir al dashboard al enviar el formulario
-  function goToDashboard(event) {
-    event.preventDefault();
-    window.location.href = 'dashboard.html';
-  }
-</script>
 </body>
 </html>
