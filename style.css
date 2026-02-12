@@ -1,34 +1,43 @@
 * {
-     box-sizing: border-box;
+     /*===== TEST DI PERSONALITA ===== */
+     /*===== VARIABLES ===== */
+     --color-accent: #e5e7eb;
+     --color-accent-bg: #0c7c45;
+     --color-accent-text: #1f2933;
+     --color-accent-border: 1px solid #d1d5db;
+     --color-accent-hover: #e2e8f0;
+     --color-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+{  box-sizing: border-box;
      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
      margin: 0;
-     background: var(--color-accent-bg, #f7f9fb);
-     color: var(--color-accent-text, #1f2933);
+     background: var(--color-accent);
+     color: var(--color-accent-text);
      display: flex;
      justify-content: center;
      padding: 1.5rem;
 }
 
 .test-container {
-     background: var(--color-accent-bg, #ffffff);
+     background: var(--color-accent);
      max-width: 720px;
      width: 100%;
      border-radius: 16px;
      padding: 2rem;
-     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+     box-shadow: var(--color-box-shadow);
 }
 
 h1,
-h2 {
+h3 {
      text-align: center;
 }
-
 .subtitle {
      text-align: center;
-     color: var(--color-accent-text, #4b5563);
+     color: var(--color-accent-text);
      margin-bottom: 2rem;
 }
 
@@ -38,7 +47,7 @@ button {
      padding: 0.9rem 1.2rem;
      font-size: 1rem;
      cursor: pointer;
-     background: var(--color-accent-bg, #0c7c45);
+     background: var(--color-accent-bg);
 }
 
 .hidden {
@@ -51,13 +60,13 @@ button {
 
 #progressText {
      font-size: 0.9rem;
-     color: var(--color-accent-text, #374151);
+     color: var(--color-accent-text);
 }
 
 .progress-bar {
      width: 100%;
      height: 8px;
-     background: var(--color-accent, #e5e7eb);
+     background: var(--color-accent);
      border-radius: 4px;
      margin-top: 0.4rem;
 }
@@ -65,7 +74,7 @@ button {
 .progress-fill {
      height: 100%;
      width: 0%;
-     background: var(--color-accent, #0f9d58);
+     background: var(--color-accent-bg);
      border-radius: 4px;
      transition: width 0.3s ease;
 }
@@ -81,14 +90,14 @@ button {
 }
 
 .options button {
-     background: var(--color-accent, #f1f5f9);
-     color: var(--color-accent-text, #111827);
-     border: var(--color-accent-border, 1px solid #d1d5db);
+     background: var(--color-accent);
+     color: var(--color-accent-text);
+     border: var(--color-accent-border);
 }
 
 .options button:hover {
-     background: var(--color-accent-hover, #e2e8f0);
-}
+     background: var(--color-accent-hover);
+     }
 
 #resultText {
      text-align: center;
@@ -98,8 +107,8 @@ button {
 
 .disclaimer {
      font-size: 0.85rem;
-     color: var(--color-accent, #0e0e0e);
-     background: var(--color-accent-bg, #f9fafb);
+     color: var(--color-accent-text);
+     background: var(--color-accent);
      padding: 1rem;
      border-radius: 10px;
      margin-bottom: 1.5rem;
