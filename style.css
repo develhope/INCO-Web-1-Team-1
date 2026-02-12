@@ -652,12 +652,12 @@ footer {
 }
 
 .stress-test-section {
-  background-color: #ffffff;
-  border-radius: 12px;
+
+
   padding: 30px 25px;
   max-width: 750px;
   width: 100%;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
 }
 
 .stress-title {
@@ -676,6 +676,10 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
 }
 
 .stress-question p.stress-question-text {
@@ -703,15 +707,20 @@ footer {
 }
 
 .stress-submit-btn {
-  background-color: #6b7b4b;
-  color: #fff;
+  display: block;
+  width: 220px;
+  max-width: 90%;
+  margin: 25px auto 0;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-accent);
   border: none;
   border-radius: 8px;
-  padding: 12px 0;
-  font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.25s, transform 0.2s;
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .stress-submit-btn:hover {
@@ -749,7 +758,7 @@ footer {
 /* ===== TEST 3 STARTS===== */
 /* ===== SECTION ===== */
 section.emotional-test {
-  background-color: var(--color-white);
+  background-color: #f5f5f5;
   padding: 60px 20px;
 }
 
