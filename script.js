@@ -1,141 +1,206 @@
-  //main
 document.addEventListener("DOMContentLoaded", function () {
-  const button = document.getElementById("toggleTests");
-  const testLinks = document.getElementById("testLinks");
+  // ===== PAGINA UTENTE / Toggle Cards =====
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.card');
+      const details = card.querySelector('.profile-details');
 
-  if (!button || !testLinks) return;
-
-  button.addEventListener("click", function () {
-    testLinks.classList.toggle("show");
-  });
-});
-
-  
-  //footer//
-  document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector("footer form");
-
-    form.addEventListener("submit", function(event) {
-      event.preventDefault(); 
-
-      const email = form.email.value;
-      const message = form.message.value;
-
-      if (!email || !message) {
-        alert("Per favore, compila tutti i campi.");
-        return;
+      if (details.classList.contains('show')) {
+        details.style.maxHeight = '0';
+        details.style.opacity = '0';
+        card.style.boxShadow = '0 6px 20px rgba(0,0,0,0.08)';
+      } else {
+        details.style.maxHeight = details.scrollHeight + 'px';
+        details.style.opacity = '1';
+        card.style.boxShadow = '0 12px 32px rgba(107,123,75,0.3)';
+        details.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
 
-      alert("Messaggio inviato con successo!");
-      form.reset();
+      details.classList.toggle('show');
+      btn.textContent = details.classList.contains('show') ? 'Nascondi risultati' : 'Mostra risultati';
     });
   });
 
-  //PAGINA UTENTE//
-  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  const startBtn = document.getElementById("startBtn");
+const intro = document.getElementById("intro");
+const test = document.getElementById("test");
+const result = document.getElementById("result");
 
-toggleButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card = btn.closest('.card');
-    const details = card.querySelector('.profile-details');
+const questionText = document.getElementById("questionText");
+const progressText = document.getElementById("progressText");
+const progressFill = document.getElementById("progressFill");
+const resultText = document.getElementById("resultText");
 
-    if (details.classList.contains('show')) {
-      details.style.maxHeight = '0';
-      details.style.opacity = '0';
-      card.style.boxShadow = '0 6px 20px rgba(0,0,0,0.08)';
-    } else {
-      details.style.maxHeight = details.scrollHeight + 'px';
-      details.style.opacity = '1';
-      card.style.boxShadow = '0 12px 32px rgba(107,123,75,0.3)';
-      details.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+if (startBtn) {
+  const optionButtons = document.querySelectorAll(".options button");
 
-    details.classList.toggle('show');
-    btn.textContent = details.classList.contains('show') ? 'Nascondi risultati' : 'Mostra risultati';
+  let currentQuestion = 0;
+  let answers = [];
+
+  const questions = [
+    { text: "Mi piace incontrare nuove persone.", trait: "extraversion" },
+    { text: "Mi piace pianificare le cose in anticipo.", trait: "conscientiousness" },
+    { text: "Rimango calmo sotto pressione.", trait: "emotional_stability" },
+    { text: "Mi piace esplorare nuove idee.", trait: "openness" },
+    { text: "Cerco di essere premuroso verso gli altri.", trait: "agreeableness" },
+    { text: "Mi sento energico in contesti sociali.", trait: "extraversion" },
+    { text: "Seguo routine e programmi.", trait: "conscientiousness" },
+    { text: "Mi preoccupo facilmente per molte cose.", trait: "emotional_stability", reverse: true },
+    { text: "Mi piacciono le attività creative.", trait: "openness" },
+    { text: "Sono disposto a scendere a compromessi.", trait: "agreeableness" }
+  ];
+
+  startBtn.addEventListener("click", () => {
+    intro.classList.add("hidden");
+    test.classList.remove("hidden");
+    loadQuestion();
   });
-});
 
-//TEST3//
-document.addEventListener("DOMContentLoaded", function () {
-  // Prendiamo il riferimento al pulsante "Invia", al messaggio di risultato e al form
-  const button = document.getElementById("submitTest");
-  const message = document.getElementById("resultMessage");
-  const form = document.querySelector(".test-form");
+  optionButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      answers.push({
+        trait: questions[currentQuestion].trait,
+        value: questions[currentQuestion].reverse
+          ? 6 - Number(button.dataset.value)
+          : Number(button.dataset.value)
+      });
 
-  // Controlliamo che gli elementi esistano
-  if (!button || !message || !form) return;
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    });
+  });
 
-  // Aggiungiamo un listener per il click sul pulsante
-  button.addEventListener("click", function (event) {
-    // Evitiamo il comportamento predefinito del form (submit e ricarica pagina)
+  function loadQuestion() {
+    questionText.textContent = questions[currentQuestion].text;
+    progressText.textContent = `Domanda ${currentQuestion + 1} di ${questions.length}`;
+    progressFill.style.width = ((currentQuestion) / questions.length) * 100 + "%";
+  }
+
+  function showResult() {
+    test.classList.add("hidden");
+    result.classList.remove("hidden");
+
+    const traits = {};
+    answers.forEach(a => {
+      traits[a.trait] = (traits[a.trait] || 0) + a.value;
+    });
+
+    let summary = "In base alle tue risposte, il tuo profilo della personalità suggerisce:\n\n";
+    summary += traits.extraversion >= 12 ? "• Sei energico e socievole.\n" : "• Tendi a essere più riservato e riflessivo.\n";
+    summary += traits.conscientiousness >= 12 ? "• Sei organizzato e affidabile.\n" : "• Preferisci flessibilità rispetto a una pianificazione rigorosa.\n";
+    summary += traits.emotional_stability >= 12 ? "• Gestisci bene lo stress.\n" : "• Potresti essere più sensibile emotivamente.\n";
+    summary += traits.openness >= 12 ? "• Sei curioso e aperto alle novità.\n" : "• Preferisci familiarità e praticità.\n";
+    summary += traits.agreeableness >= 12 ? "• Sei cooperativo ed empatico.\n" : "• Sei più diretto e competitivo.\n";
+
+    resultText.textContent = summary;
+  }
+}
+
+  // ===== TEST2 =====
+const submitStress = document.getElementById("submitStress");
+const stressResultMessage = document.getElementById("stressResultMessage");
+const stressForm = document.querySelector(".stress-form");
+
+if (submitStress && stressResultMessage && stressForm) {
+  submitStress.addEventListener("click", function(event) {
     event.preventDefault();
 
-    // Prendiamo tutte le domande
-    const questions = form.querySelectorAll(".test-question");
+    const questions = stressForm.querySelectorAll(".stress-question");
     let allAnswered = true;
 
-    // Controlliamo se ogni domanda ha una risposta selezionata
-    questions.forEach((question) => {
-      const checked = question.querySelector("input[type='radio']:checked");
-      if (!checked) {
-        allAnswered = false;
-      }
+    questions.forEach(q => {
+      if (!q.querySelector("input[type='radio']:checked")) allAnswered = false;
     });
 
     if (!allAnswered) {
-      // Se manca qualche risposta, mostriamo un messaggio di errore
-      message.textContent = "Per favore, rispondi a tutte le domande prima di inviare.";
-      message.style.color = "red";
-      return; 
+      stressResultMessage.textContent = "Per favore, rispondi a tutte le domande prima di inviare.";
+      stressResultMessage.style.color = "red";
+      return;
     }
 
-    // Se tutte le domande sono risposte, mostriamo il messaggio di conferma
-    message.textContent =
-      "Elaborazione completata, il risultato sarà disponibile nel tuo profilo personale.";
-    message.style.color = "var(--color-accent)";
+    stressResultMessage.innerHTML = `Elaborazione completata, il risultato sarà disponibile nel <a href="./dashboard.html">tuo profilo personale</a>.`;
+    stressResultMessage.style.color = "var(--color-accent)";
 
-    // Disabilitiamo il pulsante per impedire ulteriori click
-    button.disabled = true;
+    submitStress.disabled = true;
+    submitStress.style.backgroundColor = "#ccc";
+    submitStress.style.cursor = "not-allowed";
+    submitStress.style.color = "#666";
 
-    // Cambiamo lo stile del pulsante per mostrare che non è più cliccabile
-    button.style.backgroundColor = "#ccc";  // colore grigio
-    button.style.cursor = "not-allowed";     // cambio cursore
-    button.style.color = "#666";             // testo più scuro
-
-    // Disabilitiamo tutti gli input della form
-    const inputs = form.querySelectorAll("input");
+    const inputs = stressForm.querySelectorAll("input");
     inputs.forEach(input => input.disabled = true);
-
-    // Puliamo il form dopo l'invio
-    form.reset(); 
   });
-});
+}
 
 
+  // ===== TEST3 =====
+const submitTest = document.getElementById("submitTest");
+const resultMessage = document.getElementById("resultMessage");
+const testForm = document.querySelector(".test-form");
 
-  //chi siamo//
-  const testimonials = document.querySelectorAll(".testimonial");
-  let currentIndex = 0;
+if (submitTest && resultMessage && testForm) {
+  submitTest.addEventListener("click", function(event) {
+    event.preventDefault();
 
-  testimonials[currentIndex].classList.add("active");
+    const questions = testForm.querySelectorAll(".test-question");
+    let allAnswered = true;
 
-  setInterval(function () {
-    testimonials[currentIndex].classList.remove("active");
+    questions.forEach(q => {
+      if (!q.querySelector("input[type='radio']:checked")) allAnswered = false;
+    });
 
-    currentIndex++;
-    if (currentIndex >= testimonials.length) {
-      currentIndex = 0;
+    if (!allAnswered) {
+      resultMessage.textContent = "Per favore, rispondi a tutte le domande prima di inviare.";
+      resultMessage.style.color = "red";
+      return;
     }
 
+    resultMessage.innerHTML = `Elaborazione completata, il risultato sarà disponibile nel <a href="./dashboard.html">tuo profilo personale</a>.`;
+    resultMessage.style.color = "var(--color-accent)";
+
+    submitTest.disabled = true;
+    submitTest.style.backgroundColor = "#ccc";
+    submitTest.style.cursor = "not-allowed";
+    submitTest.style.color = "#666";
+
+    const inputs = testForm.querySelectorAll("input");
+    inputs.forEach(input => input.disabled = true);
+  });
+}
+
+
+  // ===== FOOTER FORM =====
+  const footerForm = document.querySelector("footer form");
+  if (footerForm) {
+    footerForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      alert("Messaggio inviato con successo!");
+      footerForm.reset();
+    });
+  }
+
+  // ===== TESTIMONIALS SLIDER =====
+  const testimonials = document.querySelectorAll(".testimonial");
+  if (testimonials.length > 0) {
+    let currentIndex = 0;
     testimonials[currentIndex].classList.add("active");
-  }, 4000);
+    setInterval(() => {
+      testimonials[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      testimonials[currentIndex].classList.add("active");
+    }, 4000);
+  }
 
-  const form = document.querySelector(".booking form");
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); 
-
-  alert("Messaggio inviato con successo!");
-
-  form.reset(); 
+  // ===== MAIN PAGE TOGGLE TESTS =====
+  const toggleBtn = document.getElementById("toggleTests");
+  const testLinks = document.getElementById("testLinks");
+  if (toggleBtn && testLinks) {
+    toggleBtn.addEventListener("click", () => {
+      testLinks.classList.toggle("show");
+    });
+  }
 });

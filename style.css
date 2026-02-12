@@ -512,6 +512,240 @@ footer {
 
 /* ===== PAGINA UTENTE ENDS ===== */
 
+/* ===== TEST 1 STARTS===== */
+/* ===== BODY CENTERING ===== */
+.test-wrapper {
+    min-height: 64vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg);
+    flex-direction: column
+}
+.hidden {
+    display: none !important;;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.test-container {
+    width: 100%;
+    max-width: 720px;
+    background: var(--color-bg);
+    color: var(--color-accent-text);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--color-box-shadow);
+}
+
+/* ===== TITLES ===== */
+.test-container h1,
+.test-container h3 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+/* ===== BUTTONS ===== */
+.test-container button {
+    background-color: #6b7b4b;
+    color: var(--color-white);
+    border: none;
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.test-container button:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+
+/* ===== PROGRESS ===== */
+#progress {
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--color-accent);
+    border-radius: 4px;
+    margin-top: 0.4rem;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--color-accent-bg);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* ===== OPTIONS ===== */
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+}
+
+
+
+/* ===== RESULT ===== */
+#resultText {
+    text-align: center;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    background: var(--color-accent);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ===== RESPONSIVE PART ======= */
+@media (min-width: 768px) {
+    .options {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;  
+        padding: 1rem 0;
+    }
+
+    .test-container {
+        padding: 1.3rem;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+/* ===== TEST 1 ENDS===== */
+
+/* ===== TEST 2 STARTS===== */
+.stress-test-wrapper {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.stress-test-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  max-width: 750px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.stress-title {
+  text-align: center;
+  color: #6b7b4b;
+  margin-bottom: 10px;
+}
+
+.stress-instructions {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.stress-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stress-question p.stress-question-text {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.stress-question label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.25s;
+}
+
+.stress-question label:hover {
+  color: #6b7b4b;
+}
+
+.stress-question input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #6b7b4b;
+}
+
+.stress-submit-btn {
+  background-color: #6b7b4b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.2s;
+}
+
+.stress-submit-btn:hover {
+  background-color: #5a683f;
+  transform: translateY(-2px);
+}
+
+.stress-result-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #6b7b4b;
+  font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .stress-test-section {
+    padding: 25px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stress-test-section {
+    padding: 20px 12px;
+  }
+
+  .stress-submit-btn {
+    width: 100%;
+  }
+}
+
+/* ===== TEST 2 ENDS===== */
+
 /* ===== TEST 3 STARTS===== */
 /* ===== SECTION ===== */
 section.emotional-test {
@@ -542,6 +776,10 @@ section p {
   background-color: var(--color-white);
   border: 3px solid var(--color-border);
   border-radius: 12px;
+
+  display: flex;
+  flex-direction: column; 
+  gap: 25px; 
 }
 
 .test-question {
@@ -570,6 +808,18 @@ section p {
 
 .test-question label:hover {
   color: var(--color-accent);
+}
+
+#intro {
+    text-align: center;
+}
+.booking{
+      margin-top: 25px;
+    padding: 12px 28px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /* ===== RESULT MESSAGE ===== */

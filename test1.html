@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Personality Test</title>
+     <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<div class="test-wrapper">
+    <main class="test-container">
+        <!-- Intro -->
+        <section id="intro">
+            <h1>Scopri la Tua Personalità</h1>
+            <p class="subtitle">
+                Scegli quanto ogni affermazione rispecchia il tuo modo di essere.
+            </p>
+            <button class="booking" id="startBtn">Inizia il Test della Personalità</button>
+        </section>
+
+        <!-- Test -->
+        <section id="test" class="hidden">
+            <div id="progress">
+                <span id="progressText"></span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div id="questionBox">
+                <h2 id="questionText"></h2>
+
+                <div class="options">
+                    <button class="booking" data-value="1">Completamente in disaccordo</button>
+                    <button class="booking" data-value="2">In disaccordo</button>
+                    <button class="booking" data-value="3">Neutrale</button>
+                    <button class="booking" data-value="4">D'accordo</button>
+                    <button class="booking" data-value="5">Completamente d'accordo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Result -->
+        <section id="result" class="hidden">
+            <h2>Risultato del Test</h2>
+            <p id="resultText"></p>
+
+            <div class="disclaimer">
+                <strong>Nota:</strong>
+                Questo test della personalità è fornito a scopo educativo e informativo. 
+                Non costituisce una valutazione psicologica o professionale e non deve essere utilizzato per decisioni cliniche o diagnostiche.
+            </div>
+            <p id="resultMessage" class="result-message">
+                Elaborazione completata, il risultato sarà disponibile nel 
+                <a href="./dashboard.html" target="_blank">tuo profilo personale</a> dove puoi vedere una descrizione più dettagliata.
+            </p>
+
+            <p id="resultMessage" class="result-message"></p>
+            <button class="booking" onclick="location.reload()">Rifare il Test</button>
+        </section>
+    </main>
+</div>
+    
+         <footer>
+  <div class="footer-container">
+
+    <!-- Navigazione -->
+    <div class="footer-section">
+      <h3>Navigazione</h3>
+      <ul>
+        <li><a href="./chisiamo.html">Chi siamo</a></li>
+        <li><a href="./index.html#toggleTests">Elenco dei test</a></li>
+        <li><a href="./dashboard.html">Profilo personale</a></li>
+      </ul>
+    </div>
+
+    <!-- Descrizione del progetto -->
+    <div class="footer-section">
+      <h3>MindTest</h3>
+      <p>
+        MindTest | Psicologia è una piattaforma di test psicologici online
+        pensata per aiutarti a conoscere meglio te stesso,
+        le tue emozioni e il tuo benessere mentale.
+      </p>
+    </div>
+
+    <!-- Modulo di contatto -->
+    <div class="footer-section">
+      <h3>Contattaci</h3>
+      <form action="#" method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="3" required></textarea>
+
+        <button type="submit">Invia</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2026 MindTest | Psicologia. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+     <script src="./script.js"></script>
+</body>
+
+</html>
