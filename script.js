@@ -1,3 +1,16 @@
+  //main
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("toggleTests");
+  const testLinks = document.getElementById("testLinks");
+
+  if (!button || !testLinks) return;
+
+  button.addEventListener("click", function () {
+    testLinks.classList.toggle("show");
+  });
+});
+
+  
   //footer//
   document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("footer form");
