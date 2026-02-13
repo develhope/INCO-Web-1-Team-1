@@ -30,7 +30,14 @@ body {
      padding: 2rem;
      box-shadow: var(--color-box-shadow);
 }
-
+img {
+     display: block;
+     margin: 0 auto 1.5rem;
+     width: 120px;
+     height: auto;
+     border: 0.5px solid var(--color-accent-text);
+     border-radius: 35%;
+}
 h1,
 h3 {
      text-align: center;
@@ -133,4 +140,3 @@ button {
                grid-template-columns: 1fr;
           }
      }
-}
