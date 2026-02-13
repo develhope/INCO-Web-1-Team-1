@@ -148,16 +148,14 @@ body {
 /* ===== MAIN ENDS ===== */
 
 /* ===== FOOTER STARTS ===== */
-/* ===== FOOTER ===== */
-footer {
+
+.site-footer {
   background-color: var(--color-bg);
-  color: var(--color-text-main);
-  padding: 40px 20px 20px;
+  padding: 50px 20px 25px;
   font-family: Arial, sans-serif;
 }
 
-/* ===== CONTAINER ===== */
-.footer-container {
+.site-footer__container {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
@@ -165,91 +163,83 @@ footer {
   gap: 40px;
 }
 
-/* ===== SECTIONS ===== */
-.footer-section {
+.site-footer__section {
   flex: 1;
 }
 
-.footer-section h3 {
+.site-footer__title {
   font-size: 18px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   color: var(--color-accent);
 }
 
-.footer-section form {
-  max-width: 100%;
-  padding-right: 10px;
-}
-/* ===== TEXT ===== */
-.footer-section p {
+.site-footer__text {
   font-size: 14px;
   line-height: 1.6;
   color: var(--color-text-secondary);
 }
 
-/* ===== LINKS ===== */
-.footer-section ul {
+.site-footer__list {
   list-style: none;
   padding: 0;
 }
 
-.footer-section ul li {
+.site-footer__list li {
   margin-bottom: 8px;
 }
 
-.footer-section a {
+.site-footer__list a {
   text-decoration: none;
   color: var(--color-text-secondary);
   transition: color 0.25s ease;
 }
 
-.footer-section a:hover {
+.site-footer__list a:hover {
   color: var(--color-accent);
 }
 
 /* ===== FORM ===== */
-.footer-section form label {
+
+.site-footer__form label {
   font-size: 13px;
   color: var(--color-text-secondary);
 }
 
-.footer-section form input,
-.footer-section form textarea {
+.site-footer__form input,
+.site-footer__form textarea {
   width: 100%;
   padding: 8px 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   font-size: 14px;
-  transition: border-color 0.25s ease;
 }
 
-.footer-section form input:focus,
-.footer-section form textarea:focus {
+.site-footer__form input:focus,
+.site-footer__form textarea:focus {
   outline: none;
   border-color: var(--color-accent);
 }
 
-/* ===== BUTTON ===== */
-.footer-section form button {
+.site-footer__form button {
   background-color: var(--color-accent);
   color: var(--color-white);
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
-  font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.15s ease;
+  transition: all 0.25s ease;
 }
 
-.footer-section form button:hover {
+.site-footer__form button:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-1px);
 }
 
 /* ===== BOTTOM ===== */
-.footer-bottom {
-  margin-top: 30px;
+
+.site-footer__bottom {
+  margin-top: 35px;
   padding-top: 15px;
   border-top: 1px solid var(--color-border);
   text-align: center;
@@ -257,31 +247,21 @@ footer {
   color: var(--color-text-muted);
 }
 
-/* ===== RESPONSIVE ======== */
-
+/* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
-  .footer-container {
+  .site-footer__container {
     flex-direction: column;
     gap: 30px;
-  }
-
-  footer {
-    padding: 30px 15px 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .footer-section p,
-  .footer-section a,
-  .footer-section form label {
-    font-size: 13px;
-  }
-
-  .footer-section form button {
+  .site-footer__form button {
     width: 100%;
   }
 }
+
 /* ===== FOOTER ENDS ===== */
 
 /* ===== PAGINA UTENTE STARTS ===== */

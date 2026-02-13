@@ -2,8 +2,9 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MindTest - Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -37,36 +38,35 @@
   </section>
 </main>
 
-     <footer>
-  <div class="footer-container">
+<footer class="site-footer">
+  <div class="site-footer__container">
 
-    <!-- Navigazione -->
-    <div class="footer-section">
-      <h3>Navigazione</h3>
-      <ul>
+    <div class="site-footer__section">
+      <h3 class="site-footer__title">Navigazione</h3>
+      <ul class="site-footer__list">
         <li><a href="./chisiamo.html">Chi siamo</a></li>
         <li><a href="./index.html#toggleTests">Elenco dei test</a></li>
+        <li><a href="./dashboard.html">Profilo personale</a></li>
       </ul>
     </div>
 
-    <!-- Descrizione del progetto -->
-    <div class="footer-section">
-      <h3>MindTest</h3>
-      <p>
+    <div class="site-footer__section">
+      <h3 class="site-footer__title">MindTest</h3>
+      <p class="site-footer__text">
         MindTest | Psicologia è una piattaforma di test psicologici online
         pensata per aiutarti a conoscere meglio te stesso,
         le tue emozioni e il tuo benessere mentale.
       </p>
     </div>
 
-    <!-- Modulo di contatto -->
-    <div class="footer-section">
-      <h3>Contattaci</h3>
-      <form action="#" method="post">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Messaggio</label>
-        <textarea id="message" name="message" rows="3" required></textarea>
+    <div class="site-footer__section">
+      <h3 class="site-footer__title">Contattaci</h3>
+      <form class="site-footer__form">
+        <label for="footer-email">Email</label>
+        <input type="email" id="footer-email" required>
+
+        <label for="footer-message">Messaggio</label>
+        <textarea id="footer-message" rows="3" required></textarea>
 
         <button type="submit">Invia</button>
       </form>
@@ -74,11 +74,11 @@
 
   </div>
 
-  <!-- Copyright -->
-  <div class="footer-bottom">
+  <div class="site-footer__bottom">
     <p>&copy; 2026 MindTest | Psicologia. Tutti i diritti riservati.</p>
   </div>
 </footer>
+
 
 <script src="script.js"></script>
 </body>
