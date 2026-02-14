@@ -12,7 +12,7 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  background: #222;
+  background: #6b7b4b;
   padding: 15px 20px;
   position: relative;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 .nav-links a:hover {
-  background: #444;
+  background: #5a683f;
   border-radius: 5px;
 }
 
