@@ -38,6 +38,12 @@ body {
   padding: 8px 12px;
 }
 
+.nav-links a.active {
+  background: #ffffff;
+  color: #333;
+  border-radius: 5px;
+}
+
 .nav-links a:hover {
   background: #5a683f;
   border-radius: 5px;
