@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindTest - Registro</title>
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindTest | Psicologia</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- ===== NAVBAR ===== -->
+ <!-- ===== NAVBAR ===== -->
    <nav class="navbar">
   <div class="logo">
     <a href="index.html">MindTest</a>
@@ -27,13 +27,10 @@
     <a href="./pagina_utente.html" class="signup">Registrazione</a>
   </div>
 </nav>
-  <!-- ===== MAIN ===== -->
-<main class="registration-page">
-  <section class="registration card">
-    <h2>Crea il tuo profilo</h2>
-
-    <label>Nome:</label>
-    <input type="text" placeholder="Inserisci il tuo nome" required>
+<!-- ===== MAIN ===== -->
+    <main class="registration-page">
+  <section class="registration card dontmove">
+    <h2>Accedi al tuo profilo</h2>
 
     <label>Email:</label>
     <input type="email" placeholder="Inserisci la tua email" required>
@@ -41,20 +38,14 @@
     <label>Password:</label>
     <input type="password" placeholder="Inserisci la tua password" required>
 
-    <label>Età:</label>
-    <input type="number" placeholder="Inserisci la tua età">
+    <button type="button" onclick="window.location.href='dashboard.html'">
+      Accedi
+    </button>
 
-    <label>Città:</label>
-    <input type="text" placeholder="Inserisci la tua città">
-
-    <label>Avatar:</label>
-    <div class="avatar-options">
-      <img src="https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?w=600" alt="Avatar 1" class="avatar-select">
-      <img src="https://plus.unsplash.com/premium_vector-1682269284255-8209b981c625?w=600" alt="Avatar 2" class="avatar-select">
-      <img src="https://plus.unsplash.com/premium_vector-1682269282372-6d888f3451f1?w=600" alt="Avatar 3" class="avatar-select">
-    </div>
-
-    <button type="button" onclick="window.location.href='dashboard.html'">Crea profilo</button>
+    <p style="margin-top:15px; text-align:center;">
+      Non hai un account?
+      <a href="./pagina_utente.html">Registrati</a>
+    </p>
   </section>
 </main>
   <!-- ===== FOOTER ===== -->
@@ -98,8 +89,5 @@
     <p>&copy; 2026 MindTest | Psicologia. Tutti i diritti riservati.</p>
   </div>
 </footer>
-
-
-
 </body>
 </html>
